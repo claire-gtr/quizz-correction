@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_08_09_160602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.bigint "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_reviews_on_song_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "category"
+  end
+
+  add_foreign_key "reviews", "songs"
 end

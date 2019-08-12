@@ -1,0 +1,17 @@
+<h1>Songs#index</h1>
+<p>Find me in app/views/songs/index.html.erb</p>
+
+<div class="container">
+  <% @songs.each do |song| %>
+  <div class="row">
+    <div class="col">
+      <h2><%= song.title %></h2>
+      <h4><%= song.category %></h4>
+      <p><%= link_to "See more", song_path(song) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<%= link_to "Add new song", new_song_path %>

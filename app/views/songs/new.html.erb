@@ -1,0 +1,14 @@
+<h1>Songs#new</h1>
+<p>Find me in app/views/songs/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= simple_form_for @song do |r| %>
+        <%= r.input :title %>
+        <%= r.input :category %>
+        <%= r.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

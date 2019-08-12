@@ -1,0 +1,17 @@
+<h1>Songs#show</h1>
+<p>Find me in app/views/songs/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3><%= @song.title %></h3>
+      <h4><%= @song.category %></h4>
+  <em>Reviews:</em>
+      <% @song.reviews.each do |r| %>
+      <div><p><em>"<%= r.content %>"</em></p></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "add a reviw", new_song_review_path(@song) %>
